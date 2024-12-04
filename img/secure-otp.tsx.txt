@@ -1,0 +1,169 @@
+'use client'
+
+import { useState } from 'react'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { AlertCircle, CheckCircle2, Smartphone } from "lucide-react"
+import { motion, AnimatePresence } from 'framer-motion'
+
+// Simulated server action for OTP generation and verification
+async function generateOTP(phoneNumber: string) {
+  // In a real application, this would be a server-side action
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  return Math.floor(100000 + Math.random() * 900000).toString()
+}
+
+async function verifyOTP(phoneNumber: string, otp: string) {
+  // In a real application, this would be a server-side action
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  return true // Simulated success
+}
+
+export default function SecureOTP() {
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [otp, setOTP] = useState('')
+  const [step, setStep] = useState('phone')
+  const [error, setError] = useState('')
+  const [countdown, setCountdown] = useState(0)
+  const [attempts, setAttempts] = useState(0)
+
+  const handleSendOTP = async () => {
+    if (!/^\+?[1-9]\d{1,14}$/.test(phoneNumber)) {
+      setError('Please enter a valid phone number')
+      return
+    }
+    setError('')
+    await generateOTP(phoneNumber)
+    setStep('otp')
+    setCountdown(30)
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+  }
+
+  const handleVerifyOTP = async () => {
+    if (otp.length !== 6 || !/^\d+$/.test(otp)) {
+      setError('Please enter a valid 6-digit OTP')
+      return
+    }
+    setError('')
+    const isValid = await verifyOTP(phoneNumber, otp)
+    if (isValid) {
+      setStep('success')
+    } else {
+      setAttempts(prev => prev + 1)
+      if (attempts >= 2) {
+        setStep('blocked')
+      } else {
+        setError('Invalid OTP. Please try again.')
+      }
+    }
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500 p-4">
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-center">Secure OTP Authentication</CardTitle>
+          <CardDescription className="text-center">Verify your phone number to continue</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <AnimatePresence mode="wait">
+            {step === 'phone' && (
+              <motion.div
+                key="phone"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="+1234567890"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
+                  </div>
+                  <Button className="w-full" onClick={handleSendOTP}>
+                    Send OTP
+                  </Button>
+                </div>
+              </motion.div>
+            )}
+            {step === 'otp' && (
+              <motion.div
+                key="otp"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="otp">Enter OTP</Label>
+                    <Input
+                      id="otp"
+                      type="text"
+                      maxLength={6}
+                      placeholder="123456"
+                      value={otp}
+                      onChange={(e) => setOTP(e.target.value)}
+                    />
+                  </div>
+                  <Button className="w-full" onClick={handleVerifyOTP} disabled={countdown === 0}>
+                    {countdown > 0 ? `Verify OTP (${countdown}s)` : 'Resend OTP'}
+                  </Button>
+                </div>
+              </motion.div>
+            )}
+            {step === 'success' && (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-center space-y-4"
+              >
+                <CheckCircle2 className="mx-auto h-16 w-16 text-green-500" />
+                <p className="text-xl font-semibold">Authentication Successful!</p>
+              </motion.div>
+            )}
+            {step === 'blocked' && (
+              <motion.div
+                key="blocked"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-center space-y-4"
+              >
+                <AlertCircle className="mx-auto h-16 w-16 text-red-500" />
+                <p className="text-xl font-semibold">Too many attempts. Please try again later.</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {error && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-4 text-sm text-red-500 text-center"
+            >
+              {error}
+            </motion.p>
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  )
+}

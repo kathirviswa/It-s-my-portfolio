@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
     scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
 }
 
 body {
