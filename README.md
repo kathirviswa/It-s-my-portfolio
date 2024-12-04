@@ -11,7 +11,7 @@
 - 👨‍💻 My portfolio website [https://kathirdevfolio.netlify.app/]
 
 
-- 💬 Ask me about **HTML, CSS ,Bootstarp, TailwindCss,Javascript, Nuxt3.js, Vuejs**
+- 💬 Ask me about **HTML, CSS ,Bootstarp, TailwindCss,Javascript, ReactJs, Nuxt3.js, Vuejs ,Firebase**
 
 - 📫 How to reach me **kathirviswa57@gmail.com**
 
