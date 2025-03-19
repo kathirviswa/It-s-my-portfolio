@@ -68,3 +68,4 @@ document.addEventListener('DOMContentLoaded', function () {
     checkScroll();
     window.addEventListener('scroll', checkScroll);
 });
+

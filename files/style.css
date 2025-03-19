@@ -14,6 +14,7 @@
 body {
     color: white;
     background:#2b2e3b;
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar{
@@ -80,6 +81,7 @@ body {
 .navbar a:hover {
     color: #0ef;
     text-decoration: underline;
+    
 }
 
 .navbar .active {
@@ -667,10 +669,97 @@ h3 {
 
 /*==============================Contact===========*/
 
-.contacts {
+.contact form {
+  width: 600px;
+   margin: 1px auto;
+   text-align: center;
+    /* background-image: url('../img/bgWorld.png') ;
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 100vh;  */
+}
+.contact-text h2 {
+    font-size: 60px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.contact-text h2 span {
+    color: #0ef;
+}
+form .input-box
+  {
+    display: flex;
+    justify-content :space-between;
+  }
+
+.input-box .input-field{
+   width: 48.5% ;
+   margin-bottom: 15px;
+ } 
+
+
+ .message-box .item{
+   resize: none;
+   overflow: auto;
+ }
+ 
+ button
+ {
+    background: #0ef;
+    color: #081b29;
+    border: none;
+    outline: none;
+    padding: 12px 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    box-shadow:  0 0 10px #0ef;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 40px;
+    transition: background-color 0.3s ease; 
+ }
+ button:hover
+ {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
+ }
+
+.field .item {
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid  #0ef;
+    color: #ededed;
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    margin: 12px 0;
+     /* transition: border-bottom 0.3s ease; */ 
+   
+  }
+  .message-box .item{
+    width: 100%;
+    border: 2px solid  #0ef;
+    color: #ededed;
+    border-radius: 6px;
+    padding: 18px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    margin: 12px 0;
+  }
+
+  .field .item::placeholder {
+ color: rgba(255,255,255,.3);
+  }
+
+/* .contacts {
     color: #fff;
     display: grid;
-    /*grid-template-columns: repeat (2, 1fr);*/
+    /*grid-template-columns: repeat (2, 1fr);*
     align-items: center;
     gap: 3rem;
     padding: 40px;
@@ -745,8 +834,7 @@ h3 {
     background: #0ef;
     color: #000;
     box-shadow: 0 0 20px #0ef;
-}
-
+}/ */
 .last-text p{
     width: 100%;
     text-align: center;
