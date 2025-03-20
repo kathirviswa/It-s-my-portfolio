@@ -7,7 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A passionate 'Web Developer' | 'Frontend Developer' from India. This portfolio showcasing projects, skills, and experiences in web development, software engineering, and more. Discover my work, professional journey, and get in touch for collaborations.">
         <meta name="keywords" content="Portfolio, Web Developer, Python Developer, Software Engineer, Python Full Stack Developer">
-        
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style type="text/tailwindcss"></style>
+    </head>
+  
         <!--=========Canonical Tag=======-->
         <!-- <link rel="canonical" href="https://vsmidhun.site"> -->
 
@@ -79,9 +82,9 @@
                 <h1>Kathiresan V</h1>
                 <h4 style="--i:6">"Code is My Canvas,the Web is My Art"<br>
                     passionate in <span class="text"></span></h4>
-                
+               
                 <div class="img">
-                    <img src="./img/1.png" class="responsive" alt="Midhun V S">
+                    <img src="./img/1.png" class="responsive" alt="Kathiresan V ">
                 </div>
 
                 <div class="home-sci">
@@ -104,21 +107,17 @@
                 </div>
 
                 <div class="about-img">
-                    <img src="./img/2.png" class="abt-res" alt="Midhun V S">
+                    <img src="./img/2.png" class="abt-res" alt="Kathiresan V">
                 </div>
                 <div class="about-text reveal">
                     <h2>About <span>Me</span></h2>
                     <p>Hello! I’m Kathiresan, a passionate frontend developer committed to designing and building clean, responsive, and intuitive web experiences. My expertise spans HTML, CSS, Bootstrap, TailwindCSS, JavaScript, Vue.js, Nuxt.js, and Node.js, empowering me to transform ideas into functional and visually stunning solutions.
                              et starting, I’ve already crafted projects that
-           
-           
+        
             I’m not just a coder; I’m a
-           
-            creator who thrives on turning
-            showcase my eye for detail, creative problem-solving, and eagerness
-            to embrace new challenges. Every line of code I write is fueled by
-            curiosity and the drive to continuously improve.<br />
-                        I’m excited about collaborating with skilled developers, learning from industry leaders, and contributing to projects that make a positive impact on users. Together, we can create something extraordinary. Let’s build the future of the web, one project at a time!  <br>
+       creator who thrives on turning showcase my eye for detail, creative problem-solving, and eagerness
+       to embrace new challenges. Every line of code I write is fueled by curiosity and the drive to continuously improve.<br />
+        I’m excited about collaborating with skilled developers, learning from industry leaders, and contributing to projects that make a positive impact on users. Together, we can create something extraordinary. Let’s build the future of the web, one project at a time!  <br>
                        <br>
                         <a href="./files/timeline.html" style="--i:11" class="abtbtn-box">Accademics & Experience</a>
                     </p>
@@ -284,8 +283,39 @@
                 </h2>
                 <div class="separator">
                 </div>
-
-                <!--==================Project #2======================-->
+              <!-- ===================Project #1 ==============================================--> 
+               
+              <div class="project project1 reveal">
+                <div class="project-details-box">
+                    <div class="project-main-info">
+                        <span>Project #1</span>
+                        <h3>Doctor Appointment Booking App</h3>
+                        <p>
+                            "Built a responsive and user-friendly Pickmydoctor booking app using HTML, CSS, TailwindCSS, 
+                            ReactJS, and Vite. The app enables seamless appointment booking with a modern, 
+                            clean interface. Leveraged Vite's fast build performance and TailwindCSS's utility 
+                            classes for efficient styling. Ensured smooth navigation and dynamic data rendering with ReactJS, creating a streamlined and intuitive user experience. 🚀"
+                        </p>
+                        <div class="project-icons">
+                            <a href="https://github.com/kathirviswa/Doc-app", target="_blank"><i class='bx bxl-github'></i></a>
+                            <a href="https://pickmydoc.vercel.app/", target="_blank"><i class='bx bx-link-external'></i></a>
+                        </div>
+                    </div>
+                    <div class="project-tools">
+                        <p>HTML , CSS, TAILWINDCSS , ReactJs, Vite, ReactRouterDOM</p>
+                    </div>
+                </div>
+                <div class="project-image-box">
+                    <a href="https://pickmydoc.vercel.app/", target="_blank", class="project-img-link">
+                        <img src="./img/project1.png" alt="Project Preview Image" />
+                    </a>
+                </div>
+            </div>
+              
+              
+              
+              
+              <!--==================Project #2======================-->
 
                 <div class="project project1 reveal">
                     <div class="project-details-box">
@@ -506,85 +536,52 @@
             </div>
         </section>
 
-
-
         <!--====================== Contact =============================== -->
 
-         <section class="contact">
+        <section class="contact">
             <div class="contact-text reveal">
                 <h2>Contact <span>Me</span></h2>
-            <form action ="#">
-                <div class="input-box">
-                    <div class="input-field field">
-                    <input type="text" name="name" placeholder="Full Name" id ="name"
-                    class= "item" autocomplete="off" required> 
-                    <div class="error-text"> full name can't be blank</div>
-                </div>
-                <div class="input-field field">
-                    <input type="text" name="name" placeholder="Email Address" id ="email"
-                    class= "item" autocomplete="off" required> 
-                    <div class="error-text"> Email address can't be blank</div>
-                </div>
+                <form id="contact-form" action="#">
+                    <div class="input-box">
+                        <div class="input-field field">
+                            <input type="text" name="name" placeholder="Full Name" id="name" class="item" autocomplete="off" />
+                            <div class="error-text">Full name can't be blank</div>
+                        </div>
+                        <div class="input-field field">
+                            <input type="email" name="email" placeholder="Email Address" id="email" class="item" autocomplete="off" />
+                            <div class="error-text">Email address can't be blank</div>
+                        </div>
+                    </div>
+        
+                    <div class="input-box">
+                        <div class="input-field field">
+                            <input type="tel" name="phone" placeholder="Phone NO " id="phone" class="item" autocomplete="off" />
+                            <div class="error-text">Phone number can be blank</div>
+                        </div>
+        
+                        <div class="input-field field">
+                            <input type="text" name="subject" placeholder="Subject" id="subject" class="item" autocomplete="off" />
+                            <div class="error-text">Subject can't be blank</div>
+                        </div>
+                    </div>
+        
+                    <div class="textarea-field field">
+                        <textarea name="message" placeholder="Your Message" id="message" cols="30" rows="10" class="item" autocomplete="off"></textarea>
+                        <div class="error-text">Message can't be blank</div>
+                    </div>
+        
+                    <div class="submit-btn">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="input-box">
-
-                <div class="input-field field">
-                <input type="text" name="name" placeholder="Phone NO (Optional)" id ="phone"
-                class= "item" autocomplete="off" > 
-                <div class="error-text"> Phone number can be optional</div>
-            </div>
-          
-            <div class="input-filed field">
-                <input type="text" name="name" placeholder="Subject" id ="Subject"
-                class= "item" autocomplete="off" required>
-                <div class="error-text"> Subject can't be blank</div>
-         </div>
-        </div>
-
-        <div class="message-box">
-           <textarea name="message" placeholder="Your Message" id ="message" cols="30" rows="10"
-            class= "item" autocomplete="off" required></textarea>
-            <div class="error-text"> Message can't be blank</div>
-        </div>
-   
-   <button type="submit">Send Message</button>
-         </from>
-        </section> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <section class="contacts" id="Contact">
-            <div class="contact-text reveal">
-                <h2>Contact <span>Me</span></h2>
-                <center><h4>Get in Touch</h4>
+        </section>
+        
+                <!-- <center>
+                    <div class="contact-text reveal">
+                        <h3>Get in <span>Touch</span></h3>
                 <div class="contact-list">
-                    <!-- <li><i class="bx bxs-phone-call" ></i>+918903909217</li> --
+                 <li><i class="bx bxs-phone-call" ></i>+918903909217</li> -- --
                     <li><i class='bx bxl-gmail'></i>kathirviswa57@gmail.com</li>
                     <li><i class='bx bxs-location-plus' ></i>Chennai, TamilNadu, India</li>
                     
@@ -592,20 +589,22 @@
                 <div class="contact-icons">
                     <a href="https://www.linkedin.com/in/kathirviswa/" target="_blank"><i class="bx bxl-linkedin"></i></a>
                     <a href="https://github.com/kathirviswa" target="_blank"><i class='bx bxl-github'></i></a>
-                    <!-- <a href="https://www.youtube.com/@Unlucky_Coder21"><i class='bx bxl-youtube'></i></a> --
-                    <a href="https://www.instagram.com/visvakathir/" target="_blank"><i class="bx bxl-instagram"></i></a>
-                </div>
-                </center> -->
+                    <a href="https://www.youtube.com/@Unlucky_Coder21"><i class='bx bxl-youtube'></i></a> --
+                    <a href="https://www.instagram.com/visvakathir/" target="_blank"><i class="bx bxl-instagram"></i></a> -->
+                <!-- </div>
+                </center>  -->
                 <div class="last-text">
-                    <p>Developed by Kathiresan <i class='bx bx-copyright' style="color: white;"></i> 2024</p>
+                    <p>Developed by Kathiresan <i class='bx bx-copyright' style="color: white;"></i> 2025</p>
                 </div>
             </div>
-        </section>
+        </section> 
 
-        <!--====================== Go Top Icon =============================== -->
+        <!-- ====================== Go Top Icon =============================== -->
         <a href="#Home" class="top"><i class='bx bx-up-arrow-alt' ></i> </a>
 
         <!--========Scripts===== -->
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="./files/script.js"></script>
 
     </body>  
