@@ -8,7 +8,7 @@
 
 - 🌱 I’m currently learning **Full Stack Development**
 
-- 👨‍💻 My portfolio website [https://kathirdevfolio.netlify.app/]
+- 👨‍💻 My portfolio website [https://kathirdevfolios.netlify.app/]
 
 
 - 💬 Ask me about **HTML, CSS ,Bootstarp, TailwindCss,Javascript, ReactJs, Nuxt3.js, Vuejs ,Firebase**
