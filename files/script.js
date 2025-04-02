@@ -68,90 +68,90 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', checkScroll);
 });
 
-const form = document.querySelector("form");
-const fullName = document.getElementById("name");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const subject = document.getElementById("subject");
-const message = document.getElementById("message");
+// const form = document.querySelector("form");
+// const fullName = document.getElementById("name");
+// const email = document.getElementById("email");
+// const phone = document.getElementById("phone");
+// const subject = document.getElementById("subject");
+// const message = document.getElementById("message");
 
-function sendEmail() {
-    const bodyMessage = `Full Name: ${fullName.value}<br/> 
-    Email: ${email.value}<br/>
-    Phone Number: ${phone.value}<br/> 
-    Subject: ${subject.value}<br/> 
-    Message: ${message.value}`;
+// function sendEmail() {
+//     const bodyMessage = `Full Name: ${fullName.value}<br/> 
+//     Email: ${email.value}<br/>
+//     Phone Number: ${phone.value}<br/> 
+//     Subject: ${subject.value}<br/> 
+//     Message: ${message.value}`;
 
-    Email.send({
-        SecureToken: "bbeddc31-b519-414d-8ddf-d31ac8dd0b54",
-        To: "kathirviswa57@gmail.com",
-        From: "kathirviswa57@gmail.com",
-        Subject: subject.value,
-        Body: bodyMessage
-    }).then(response => {
-        if (response === "OK") {
-            Swal.fire({
-                title: "Success!",
-                text: "Message sent successfully!",
-                icon: "success"
-            });
-        } else {
-            Swal.fire({
-                title: "Error!",
-                text: "Message could not be sent!",
-                icon: "error"
-            });
-        }
-    });
-}
+//     Email.send({
+//         SecureToken: "bbeddc31-b519-414d-8ddf-d31ac8dd0b54",
+//         To: "kathirviswa57@gmail.com",
+//         From: "kathirviswa57@gmail.com",
+//         Subject: subject.value,
+//         Body: bodyMessage
+//     }).then(response => {
+//         if (response === "OK") {
+//             Swal.fire({
+//                 title: "Success!",
+//                 text: "Message sent successfully!",
+//                 icon: "success"
+//             });
+//         } else {
+//             Swal.fire({
+//                 title: "Error!",
+//                 text: "Message could not be sent!",
+//                 icon: "error"
+//             });
+//         }
+//     });
+// }
 
-function checkInputs() {
-    const items = document.querySelectorAll(".item");
+// function checkInputs() {
+//     const items = document.querySelectorAll(".item");
 
-    items.forEach(item => {
-        if (item.value.trim() === "") {
-            item.classList.add("error");
-            item.parentElement.classList.add("error");
-        } else {
-            item.classList.remove("error");
-            item.parentElement.classList.remove("error");
-        }
+//     items.forEach(item => {
+//         if (item.value.trim() === "") {
+//             item.classList.add("error");
+//             item.parentElement.classList.add("error");
+//         } else {
+//             item.classList.remove("error");
+//             item.parentElement.classList.remove("error");
+//         }
 
-        item.addEventListener("keyup", () => {
-            if (item.value.trim() !== "") {
-                item.classList.remove("error");
-                item.parentElement.classList.remove("error");
-            } else {
-                item.classList.add("error");
-                item.parentElement.classList.add("error");
-            }
-        });
-    });
+//         item.addEventListener("keyup", () => {
+//             if (item.value.trim() !== "") {
+//                 item.classList.remove("error");
+//                 item.parentElement.classList.remove("error");
+//             } else {
+//                 item.classList.add("error");
+//                 item.parentElement.classList.add("error");
+//             }
+//         });
+//     });
 
-    checkEmail();
-}
+//     checkEmail();
+// }
 
-function checkEmail() {
-    const emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const errorTextEmail = document.querySelector(".error-text .email");
+// function checkEmail() {
+//     const emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+//     const errorTextEmail = document.querySelector(".error-text .email");
 
-    if (!email.value.match(emailRegex)) {
-        email.classList.add("error");
-        email.parentElement.classList.add("error");
-        errorTextEmail.innerText = email.value.trim() === "" ? "Email address can't be blank" : "Please enter a valid email address";
-    } else {
-        email.classList.remove("error");
-        email.parentElement.classList.remove("error");
-        errorTextEmail.innerText = "";
-    }
-}
+//     if (!email.value.match(emailRegex)) {
+//         email.classList.add("error");
+//         email.parentElement.classList.add("error");
+//         errorTextEmail.innerText = email.value.trim() === "" ? "Email address can't be blank" : "Please enter a valid email address";
+//     } else {
+//         email.classList.remove("error");
+//         email.parentElement.classList.remove("error");
+//         errorTextEmail.innerText = "";
+//     }
+// }
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    checkInputs();
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     checkInputs();
 
-    if (![fullName, email, phone, subject, message].some(input => input.classList.contains("error"))) {
-        sendEmail();
-        form.reset();
-    }
-});
+//     if (![fullName, email, phone, subject, message].some(input => input.classList.contains("error"))) {
+//         sendEmail();
+//         form.reset();
+//     }
+// });

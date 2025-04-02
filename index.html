@@ -566,21 +566,27 @@
         <section class="contact" id ="#Contact">
             <div class="contact-text reveal">
                 <h2>Contact <span>Me</span></h2>
-                <form id="contact-form" action="#">
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <div class="input-box">
                         <div class="input-field field">
-                            <input type="text" name="name" placeholder="Full Name" id="name" class="item" autocomplete="off" />
+                            <input type="hidden" name="access_key" value="c4115c8e-5b8d-45e5-9ad9-8328fb9518e3">
+                            <input type="text" name="name" placeholder="Full Name" id="name" class="item" autocomplete="off" required />
                             <div class="error-text">Full name can't be blank</div>
                         </div>
                         <div class="input-field field">
-                            <input type="email" name="email" placeholder="Email Address" id="email" class="item" autocomplete="off" />
+                            <input type="email" name="email" placeholder="Email Address" id="email" class="item" autocomplete="off" required />
                             <div class="error-text">Email address can't be blank</div>
                         </div>
                     </div>
         
-                
+                    <div class="input-box">
                         <div class="input-field field">
-                            <input type="text" name="subject" placeholder="Subject" id="subject" class="item" autocomplete="off" />
+                            <input type="tel" name="phone" placeholder="Phone NO (Optional) " id="phone" class="item" autocomplete="off" />
+                            <div class="error-text">Phone number can be blank</div>
+                        </div>
+        
+                        <div class="input-field field">
+                            <input type="text" name="subject" placeholder="Subject" id="subject" class="item" autocomplete="off"  required/>
                             <div class="error-text">Subject can't be blank</div>
                         </div>
                     </div>
